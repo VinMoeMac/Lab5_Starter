@@ -32,10 +32,20 @@ function init() {
   });
 
   const button = document.querySelector("button");
+  
 
+  const jsConfetti = new JSConfetti()
+  
   button.addEventListener("click", (event) => {
-    sound.volume=vol.value/100;
-    sound.play();
+    if(selectElement.value!="select"){
+      sound.volume=vol.value/100;
+      sound.play();
+    }
+    
+
+    if(selectElement.value=="party-horn"){
+      jsConfetti.addConfetti();
+    }
   });
 
   
